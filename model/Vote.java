@@ -1,3 +1,4 @@
+package model;
 public class Vote {
     private String voterId;
     private String candidateId;

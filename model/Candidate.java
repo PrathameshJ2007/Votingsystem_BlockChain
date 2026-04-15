@@ -1,3 +1,4 @@
+package model;
 public class Candidate extends Person {
 
     public Candidate(String id, String name) {

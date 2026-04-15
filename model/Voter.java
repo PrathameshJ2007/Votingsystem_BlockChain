@@ -1,3 +1,4 @@
+package model;
 public class Voter extends Person{
     private String password;
     private boolean voted;
