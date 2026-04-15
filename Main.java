@@ -25,7 +25,15 @@ public class Main {
             System.out.println("6. Exit");
 
             System.out.print("Enter choice: ");
-            int choice = sc.nextInt();
+            int choice;
+
+            try {
+                choice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid input! Please enter a number.");
+                sc.nextLine(); // clear invalid input
+                continue; // restart loop
+            }
 
             switch (choice) {
 
@@ -37,7 +45,7 @@ public class Main {
                     String adminId = sc.next();
 
                     System.out.print("Enter Password: ");
-                    String adminPass = sc.nextLine();
+                    String adminPass = sc.next();
 
                     Admin admin = system.adminLogin(adminId, adminPass);
 
@@ -57,7 +65,15 @@ public class Main {
                         System.out.println("4. Logout");
 
                         System.out.print("Enter choice: ");
-                        int adminChoice = sc.nextInt();
+                        int adminChoice;
+
+                        try {
+                            adminChoice = sc.nextInt();
+                        } catch (Exception e) {
+                            System.out.println("Invalid input! Please enter a number.");
+                            sc.nextLine(); // clear invalid input
+                            continue; // restart loop
+                        }
 
                         switch (adminChoice) {
 
@@ -129,7 +145,15 @@ public class Main {
                         System.out.println("3. Logout");
 
                         System.out.print("Enter choice: ");
-                        int vChoice = sc.nextInt();
+                        int vChoice;
+
+                        try {
+                            vChoice = sc.nextInt();
+                        } catch (Exception e) {
+                            System.out.println("Invalid input! Please enter a number.");
+                            sc.nextLine(); // clear invalid input
+                            continue; // restart loop
+                        }
 
                         switch (vChoice) {
 
