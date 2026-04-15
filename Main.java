@@ -55,9 +55,10 @@ public class Main {
                         System.out.println("1. Register Voter");
                         System.out.println("2. Register Candidate");
                         System.out.println("3. View Candidates");
-                        System.out.println("4. View Results");
-                        System.out.println("5. Validate Blockchain");
-                        System.out.println("6. Logout");
+                        System.out.println("4. View Voters");
+                        System.out.println("5. View Results");
+                        System.out.println("6. Validate Blockchain");
+                        System.out.println("7. Logout");
 
                         System.out.print("Enter choice: ");
                         int adminChoice;
@@ -102,15 +103,17 @@ public class Main {
                             case 3:
                                 system.displayCandidates();
                                 break;
-
                             case 4:
+                                system.displayVoters();
+                                break;
+                            case 5:
                                 system.displayResults(); // MOVED HERE
                                 break;
                             
-                            case 5:
+                            case 6:
                                 system.validateBlockchain();
                                 break;
-                            case 6:
+                            case 7:
                                 System.out.println("Logging out...");
                                 break;
 

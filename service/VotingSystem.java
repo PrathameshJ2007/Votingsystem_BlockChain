@@ -148,6 +148,12 @@ public class VotingSystem {
             System.out.println(c.getId() + " - " + c.getName());
         }
     }
+    public void displayVoters() {
+        for (Voter v : voters) {
+            System.out.println(v.getId() + " - " + v.getName());
+        }
+    }
+    
    
 
 }
