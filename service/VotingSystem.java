@@ -6,7 +6,7 @@ import blockchain.*;
 import java.util.*;
 
 public class VotingSystem {
-
+    private java.util.List<Admin> admins;
     private List<Voter> voters;
     private List<Candidate> candidates;
     private Blockchain blockchain;
@@ -15,6 +15,8 @@ public class VotingSystem {
         voters = new ArrayList<>();
         candidates = new ArrayList<>();
         blockchain = new Blockchain();
+        admins = new java.util.ArrayList<>();
+        admins.add(new Admin("A1", "Admin", "admin123")); // default admin
     }
 
 
@@ -34,6 +36,14 @@ public class VotingSystem {
         for (Voter v : voters) {
             if (v.login(id, password)) {
                 return v;
+            }
+        }
+        return null;
+    }
+    public Admin adminLogin(String id, String password) {
+        for (Admin a : admins) {
+            if (a.login(id, password)) {
+                return a;
             }
         }
         return null;
