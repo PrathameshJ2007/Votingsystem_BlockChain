@@ -1,3 +1,7 @@
+
+//ID: A1
+//Password: admin123
+
 import service.VotingSystem;
 import model.Voter;
 import model.Admin;
