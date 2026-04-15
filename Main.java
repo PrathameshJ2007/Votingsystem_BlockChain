@@ -1,7 +1,3 @@
-
-//ID: A1
-//Password: admin123
-
 import service.VotingSystem;
 import model.Voter;
 import model.Admin;
@@ -19,10 +15,7 @@ public class Main {
             System.out.println("\n===== MAIN MENU =====");
             System.out.println("1. Admin Login");
             System.out.println("2. Voter Login");
-            System.out.println("3. View Candidates");
-            System.out.println("4. View Results");
-            System.out.println("5. Validate Blockchain");
-            System.out.println("6. Exit");
+            System.out.println("3. Exit");
 
             System.out.print("Enter choice: ");
             int choice;
@@ -31,8 +24,8 @@ public class Main {
                 choice = sc.nextInt();
             } catch (Exception e) {
                 System.out.println("Invalid input! Please enter a number.");
-                sc.nextLine(); // clear invalid input
-                continue; // restart loop
+                sc.nextLine();
+                continue;
             }
 
             switch (choice) {
@@ -62,7 +55,9 @@ public class Main {
                         System.out.println("1. Register Voter");
                         System.out.println("2. Register Candidate");
                         System.out.println("3. View Candidates");
-                        System.out.println("4. Logout");
+                        System.out.println("4. View Results");
+                        System.out.println("5. Validate Blockchain");
+                        System.out.println("6. Logout");
 
                         System.out.print("Enter choice: ");
                         int adminChoice;
@@ -71,8 +66,8 @@ public class Main {
                             adminChoice = sc.nextInt();
                         } catch (Exception e) {
                             System.out.println("Invalid input! Please enter a number.");
-                            sc.nextLine(); // clear invalid input
-                            continue; // restart loop
+                            sc.nextLine();
+                            continue;
                         }
 
                         switch (adminChoice) {
@@ -81,6 +76,7 @@ public class Main {
                                 System.out.print("Enter Voter ID: ");
                                 String vid = sc.next();
 
+                                sc.nextLine(); // FIX buffer
                                 System.out.print("Enter Name: ");
                                 String vname = sc.nextLine();
 
@@ -95,6 +91,7 @@ public class Main {
                                 System.out.print("Enter Candidate ID: ");
                                 String cid = sc.next();
 
+                                sc.nextLine(); // FIX buffer
                                 System.out.print("Enter Name: ");
                                 String cname = sc.nextLine();
 
@@ -107,6 +104,13 @@ public class Main {
                                 break;
 
                             case 4:
+                                system.displayResults(); // MOVED HERE
+                                break;
+                            
+                            case 5:
+                                system.validateBlockchain();
+                                break;
+                            case 6:
                                 System.out.println("Logging out...");
                                 break;
 
@@ -114,7 +118,7 @@ public class Main {
                                 System.out.println("Invalid choice!");
                         }
 
-                        if (adminChoice == 4) break;
+                        if (adminChoice == 5) break;
                     }
                     break;
 
@@ -151,8 +155,8 @@ public class Main {
                             vChoice = sc.nextInt();
                         } catch (Exception e) {
                             System.out.println("Invalid input! Please enter a number.");
-                            sc.nextLine(); // clear invalid input
-                            continue; // restart loop
+                            sc.nextLine();
+                            continue;
                         }
 
                         switch (vChoice) {
@@ -183,30 +187,9 @@ public class Main {
                     break;
 
                 // =========================
-                // VIEW CANDIDATES
-                // =========================
-                case 3:
-                    system.displayCandidates();
-                    break;
-
-                // =========================
-                // VIEW RESULTS
-                // =========================
-                case 4:
-                    system.displayResults();
-                    break;
-
-                // =========================
-                // VALIDATE BLOCKCHAIN
-                // =========================
-                case 5:
-                    system.validateBlockchain();
-                    break;
-
-                // =========================
                 // EXIT
                 // =========================
-                case 6:
+                case 3:
                     System.out.println("Exiting...");
                     sc.close();
                     System.exit(0);
