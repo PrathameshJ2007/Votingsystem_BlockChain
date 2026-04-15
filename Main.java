@@ -37,7 +37,7 @@ public class Main {
                     String adminId = sc.next();
 
                     System.out.print("Enter Password: ");
-                    String adminPass = sc.next();
+                    String adminPass = sc.nextLine();
 
                     Admin admin = system.adminLogin(adminId, adminPass);
 
@@ -66,7 +66,7 @@ public class Main {
                                 String vid = sc.next();
 
                                 System.out.print("Enter Name: ");
-                                String vname = sc.next();
+                                String vname = sc.nextLine();
 
                                 System.out.print("Enter Password: ");
                                 String vpass = sc.next();
@@ -80,7 +80,7 @@ public class Main {
                                 String cid = sc.next();
 
                                 System.out.print("Enter Name: ");
-                                String cname = sc.next();
+                                String cname = sc.nextLine();
 
                                 system.registerCandidate(cid, cname);
                                 System.out.println("Candidate registered successfully!");
