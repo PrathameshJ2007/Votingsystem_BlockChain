@@ -121,7 +121,7 @@ public class Main {
                                 System.out.println("Invalid choice!");
                         }
 
-                        if (adminChoice == 5) break;
+                        if (adminChoice == 7) break;
                     }
                     break;
 
